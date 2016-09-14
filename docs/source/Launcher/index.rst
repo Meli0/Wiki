@@ -38,13 +38,14 @@ These are the steps to migrate the REI's waypoints from FTB Launcher to the MYM 
 by `slyder5649 <https://mineyourmind.net/forum/threads/reis-migration-to-mym-launcher-win7.1101/>`_
 
 -----------
-MyM Launcher on Ubuntu
+MyM Launcher on Ubuntu 6.x
 -----------
-This instruction with 7 Steps intends to help setup a Ubuntu Launcher and Icon that you (Home Ubuntu 16.04.x User)  can quickly access without excessive navigating to launch it.
+This instruction with 9 Steps intends to help setup the Unity Ubuntu Launcher Icon that you (Home Ubuntu 16.04.x User)  can quickly access without excessive navigating to launch it, this also gives you a MyM Forum link by right clicking the icon. This step by step assumes MyM-Launcher.jar is not setup to launch in this manner. 
 
-Summary of Steps involved: 
 
-* Oracle Java JDK 8 will be installed first.
+Summary of Steps Involved: 
+
+* Oracle Java JDK 8 will be installed first. If already installed, skip step (or if the java version you have works fine).
 
 * There will be editing of scripts, extracting an icon from the MyM-Launcher.jar and editing the launcher application file (.desktop)
 
@@ -68,12 +69,16 @@ Summary of Steps involved:
 
 2. Download and create **custom path** to all files
   * Download The Official free MyM Launcher directly from `here <https://mineyourmind.net/#dl_jar>`_
+ 
   * ***Please manage your own files and folders at your desire***
   
   
   * Move or ``copy mv`` or ``cp``. the ``mymlauncher.jar`` to a folder designated
-  * *I suggest move (mv)*
+ 
+  * I suggest move (mv)
+ 
   * ``~/Programs/MyM`` is a work directory to store scripts, icons, jar files.
+ 
   * ``~`` is the path to your home directory ``/home/user/`` simplified to ``~``
 
 3. Move the file
@@ -83,10 +88,11 @@ Summary of Steps involved:
     cd ~/Downloads
     mv mymlauncher.jar ~/Programs/MyM
 
-4. Get the built in *Icon graphic* file from within the jar.
-  * This process requires opening and copying the graphic from the ``MyM-Launcher.jar`` - to copy the file you must mount the jar file by right clicking and [Open With] Archive Mounter. once mounted you can browse the .jar file and copy the image. 
+4. Get the stock, supplied *Icon graphic* file from within offical .jar.
   
-  * if you accidently use [Open With] Archive Manager, and attempt to copy, an error will be presented to you because you have not mounted the archive. But if you double click the graphic, it will open in an Image Viewer - then you can save it from there. 
+  * This process requires opening and copying the graphic from the ``MyM-Launcher.jar`` - to copy the file you must mount the jar file by right clicking and [Open With] Archive Mounter. Once mounted, browse the .jar file and copy the image. 
+  
+  * if [Open With] Archive Manager without mounting; And attempt to copy the file an error will be presented to you because you have not mounted the archive. But, if you double click the graphic, it will open in an Image Viewer. You can save it from the image viewer. 
   
   .. code-block:: none
   
@@ -101,7 +107,9 @@ Summary of Steps involved:
   * Once you have the icon,  save it to the work directory in ``~/Programs/MyM``
 
 5. Create the *bash* script
+  
   * Create and edit a new ``MyM.sh`` bash script.
+  
   * The ``~/Programs/MyM/MyM.sh`` script file will be stored in the ``/MyM`` work directory and ran from the ``MyM-Launcher.desktop`` application file when you click it on the Ubuntu launcher as intended.
   
   .. code-block:: cli
@@ -109,6 +117,7 @@ Summary of Steps involved:
    gedit /home/user/Programs/MyM/MyM.sh
   
   * Copy the following code, and paste it into the sh file:
+  
   .. code-block:: sh
   
     #!/bin/bash
@@ -122,7 +131,9 @@ Summary of Steps involved:
 6. Set permissions
   
   * This makes jar/sh files executable to run.
+  
   ``chmod a+x ~/Programs/MyM/MyM.sh``
+  
   ``chmod a+x ~/Programs/MyM/MyM-Launcher.jar``
   
   * The jar, and .sh files are not executable by the user. 
@@ -141,13 +152,13 @@ Summary of Steps involved:
   
   .. code-block:: cl
   
-    gedit ~/.local/share/applications/MyM-Launcher.desktop
+  gedit ~/.local/share/applications/MyM-Launcher.desktop
   
   * Copy this into the editor: 
   
-    .. code-block:: cl
+  .. code-block:: cl
     
-    [Desktop Entry]
+  [Desktop Entry]
   Name=MyM Launcher
   Comment=Launches MyM-Launcher quickly.
   Exec=~/Programs/MyM/MyM.sh
@@ -165,12 +176,15 @@ Summary of Steps involved:
   Terminal=false
 
   * Paste it, save it, and close it.
+  
   * if MyM Network decides to change the link to the forum, remember to edit that link as well. 
-  2
+  
 
 
 8. Place the launcher application icon.
+  
   * Open File Manager on the launcher, select **[Computer]** from list and navigate to:
+  
   .. code-block:: none
   
     ~/.local/share/applications/
@@ -178,11 +192,13 @@ Summary of Steps involved:
   * Locate your **MyM Launcher** in the folder with the **icon** displayed, and **drag it over to your launcher**.
 
 9. Test and... profit!
+  
   * If all steps are followed properly, launching the MyM-Launcher.jar in **Ubuntu** will work as desired.
+  
   * Right clicking the new Launcher will reveal a direct link to the MYM forums! talk amongst yourselves about how awesome
     MyM Network minecraft is. 
 
-Created by: `Meli0 <https://mineyourmind.net/forum/members/meli0.13089/>`_
+Created by: `Meli0 <https://mineyourmind.net/forum/members/meli0.13089/>` 14 Sept 2016
 
 
   
